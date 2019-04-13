@@ -51,7 +51,8 @@ npx tsc --init
 安裝並建立定檔。
 ```shell
 npm install --save-dev eslint prettier
-npx eslint --init
+touch ./.eslintrc.json
+touch ./.eslintignore
 touch ./.prettierrc
 ```
 
@@ -65,7 +66,7 @@ npx jest --init
 ### [Webpack](https://webpack.js.org/)
 安裝並建立定檔。
 ```shell
-npm install webpack webpack-cli
+npm install --save-dev webpack webpack-cli
 touch ./webpack.config.js
 ```
 
@@ -81,6 +82,7 @@ npm install --save vue vuex vue-router vue-i18n
 
 ## Documents
 在安裝[基本套件](##Packages)之後，接著我將依照以下順序設定各個工具、套件。
+- [typescript](#)
 - [eslint, prettier](#)
 - [webpack for typescript](#)
 - [webpack for css](#)
