@@ -1,8 +1,8 @@
+import Vue from 'vue';
+import App from './App.vue';
 
-class Foo {
-    greeting() {
-        console.log('Hello world')
-    }
-}
-
-(new Foo()).greeting()
+new Vue({
+  render: function(h) {
+    return h(App)
+  }
+}).$mount('#app');

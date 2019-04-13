@@ -148,7 +148,7 @@ module.exports = {
 
 ### then?
 有了 `devServer` 看程式解果後，我們可以開始寫一些程式。  
-下一個單元我們要使用 typescript + vue + vue-router 做點東西，  
+下一個單元我們要使用 typescript + vue 做點東西，  
 並且設定 webpack 可以將其編譯讓瀏覽器執行。
 
 傳送門 => [typescript and vuejs](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-and-vuejs.md)

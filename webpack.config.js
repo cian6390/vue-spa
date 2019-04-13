@@ -1,19 +1,32 @@
 
 const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 const rootResolve = (file) => path.resolve(__dirname, file)
 
 const devServer = {
   contentBase: rootResolve("dist"),
-  port: 9000  // 請選擇一個你電腦沒用到的 port
+  port: 9000
 }
 
 const rules = [
   {
     test: /\.tsx?$/,
-    use: "ts-loader",
+    use: {
+      loader: 'ts-loader',
+      options: { appendTsSuffixTo: [/\.vue$/] }
+    },
     exclude: /node_modules/
+  }, {
+    test: /\.vue$/,
+    loader: 'vue-loader'
+  }, {
+    test: /\.css$/,
+    use: [
+      'vue-style-loader',
+      'css-loader'
+    ]
   }
 ]
 
@@ -22,6 +35,7 @@ const resolve = {
 }
 
 const plugins = [
+  new VueLoaderPlugin(),
   new CopyPlugin([
     {
       from: rootResolve("public/index.html"),
