@@ -1,8 +1,8 @@
 # vue-spa
 這個 Repo 是一個基礎於 typescript 的 vue-spa 前端手腳架。  
-僅用於練習搭建並記錄一個涵蓋以下[套件](##Packages])的前端開發環境  
+僅用於練習搭建並記錄一個涵蓋以下[套件](##Packages)的前端開發環境  
 隨著各個套件的更新(出新)，這裡會做相對應的更新，因此不會將此 Repo 加入真實專案的內容。  
-有興趣的朋友可以看看[建構流程文件](#Documents)，並指正錯誤。  
+有興趣的朋友可以看看[建構流程文件](##Documents)，並指正錯誤。  
 當然如果你喜歡，歡迎 fork。  
 
 ## Structure
@@ -66,7 +66,7 @@ nvm install 10
 安裝並建立定檔。
 ```shell
 npm install --save-dev typescript
-npx tsc --init
+touch ./tsconfig.json
 ```
 
 ### [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
@@ -103,10 +103,9 @@ npm install --save vue vuex vue-router vue-i18n
 在了解什麼是 [GraphQL](https://graphql.org/) 之後，請參考 [apollo](#) 文件。  
 
 ## Documents
-在安裝[基本套件](##Packages)之後，接著我將依照以下順序設定各個工具、套件。
-- [typescript](#)
+在安裝[基本套件](##Packages)之後，接著依照以下順序設定各個工具、套件。
+- [typescript and webpack](#)
 - [eslint, prettier](#)
-- [webpack for typescript](#)
 - [webpack for css](#)
 - [webpack for vuejs](#)
 - [jest](#)
