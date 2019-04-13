@@ -4,7 +4,7 @@
 但以現代前端開發來說，僅編譯 `.ts` 是不夠的，通常會搭配 webpack 一起打包程式。  
 這個文件說明該如何讓 webpack 編譯 `.ts` 文件。  
 
-> 在開始之前請先確定您已經安裝所有的[基本套件](https://github.com/cian6390/vue-spa#packages)  
+> 在開始之前請先確定您已經安裝所有的[基本套件](https://github.com/cian6390/vue-spa#packages)  
 
 ## 依賴套件
 
@@ -82,9 +82,9 @@ class Foo {
 
 ### then?
 現在我們可以編譯出瀏覽器看得懂的 js 文件了，但還沒有一個好的方式確認結果  
-下一個單元說明，如何使用 [webpack-dev-server](#) 來查看程式執行結果。
+下一個單元說明，如何使用 [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md) 來查看程式執行結果。
 
-傳送門 => [webpack-dev-server](#)
+傳送門 => [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md)
 
 #### 相關文件
 - [webpack - TypeScript](https://webpack.js.org/guides/typescript/)

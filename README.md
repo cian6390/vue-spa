@@ -104,7 +104,8 @@ npm install --save vue vuex vue-router vue-i18n
 
 ## Documents
 在安裝[基本套件](##Packages)之後，接著依照以下順序設定各個工具、套件。
-- [typescript and webpack](#)
+- [typescript and webpack](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-webpack.md)
+- [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md)
 - [eslint, prettier](#)
 - [webpack for css](#)
 - [webpack for vuejs](#)
