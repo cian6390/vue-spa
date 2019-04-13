@@ -3,9 +3,31 @@
 僅用於練習搭建並記錄一個涵蓋以下[套件](##Packages])的前端開發環境  
 隨著各個套件的更新(出新)，這裡會做相對應的更新，因此不會將此 Repo 加入真實專案的內容。  
 有興趣的朋友可以看看[建構流程文件](#Documents)，並指正錯誤。  
-當然如果你喜歡，歡迎 fork。
-<br>
-<br>
+當然如果你喜歡，歡迎 fork。  
+
+## Structure
+這是整個專案還沒開始安裝套件時就先建立起來的基礎架構。
+
+- src/  
+    程式的主要目錄。  
+    - assets/  
+        靜態且必須經過 webpack 處理的東西。
+    - main.ts  
+        程式的主要入口點。
+- dist/  
+    經編譯後的程式，  
+    這個目錄被設定在 .gitignore 因此只有在編譯之後才會出現。
+- types/  
+    typescript 的各個型別設定檔。
+- tests/  
+    測試相關的東西。
+- public/  
+    放一些靜態且不需要經過 webpack 處理的東西。  
+    - index.html  
+        使用者訪問網站的唯一 html 檔案，  
+        在 `ssr` 模式底下這支檔案不會被用到。
+- documents/  
+    工具、套件等等的設定說明文件。
 
 ## Packages
 在深入各個工具、套件之前，確保完成以下基本套件的安裝，  
@@ -79,31 +101,6 @@ npm install --save vue vuex vue-router vue-i18n
 ### [Apollo](https://www.apollographql.com/)
 如果你有興趣，並且想要將 Apollo-GraphQL 加入至專案  
 在了解什麼是 [GraphQL](https://graphql.org/) 之後，請參考 [apollo](#) 文件。  
-
-## Structure
-這是整個專案還沒開始安裝套件時就先建立起來的基礎架構。
-
-- src/  
-    程式的主要目錄。  
-    - assets/  
-        靜態且必須經過 webpack 處理的東西。
-    - main.ts  
-        程式的主要入口點。
-- dist/  
-    經編譯後的程式，  
-    這個目錄被設定在 .gitignore 因此只有在編譯之後才會出現。
-- types/  
-    typescript 的各個型別設定檔。
-- tests/  
-    測試相關的東西。
-- public/  
-    放一些靜態且不需要經過 webpack 處理的東西。  
-    - index.html  
-        使用者訪問網站的唯一 html 檔案，  
-        在 `ssr` 模式底下這支檔案不會被用到。
-- documents/  
-    工具、套件等等的設定說明文件。
-
 
 ## Documents
 在安裝[基本套件](##Packages)之後，接著我將依照以下順序設定各個工具、套件。
