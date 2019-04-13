@@ -97,7 +97,10 @@ npm install --save vue vuex vue-router vue-i18n
 - tests/  
     測試相關的東西。
 - public/  
-    放一些靜態且不需要經過 webpack 處理的東西。
+    放一些靜態且不需要經過 webpack 處理的東西。  
+    - index.html  
+        使用者訪問網站的唯一 html 檔案，  
+        在 `ssr` 模式底下這支檔案不會被用到。
 - documents/  
     工具、套件等等的設定說明文件。
 
