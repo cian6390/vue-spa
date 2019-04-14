@@ -80,7 +80,7 @@ class Foo {
 
 現在執行 `npm run build` 確認 webpack 將 `./src/main.ts` 編譯成 `./dist/bundle.js`  
 
-### then?
+### Next step
 現在我們可以編譯出瀏覽器看得懂的 js 文件了，但還沒有一個好的方式確認結果  
 下一個單元說明，如何使用 [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md) 來查看程式執行結果。
 

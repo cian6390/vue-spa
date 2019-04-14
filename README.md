@@ -107,8 +107,11 @@ npm install --save vue vuex vue-router vue-i18n
 - [typescript and webpack](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-webpack.md)
 - [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md)
 - [typescript and vuejs](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-and-vuejs.md)
-- [eslint, prettier](#)
-- [webpack for css](#)
-- [webpack for vuejs](#)
-- [jest](#)
-- [apollo](#)
+- [more in progress ... ](#)
+
+## Advantage
+Even the development is working, but that not everything  
+We still have a lot stuff to imporve it  
+And it will always like that ...  
+<br>
+Comming soon ...

@@ -245,6 +245,13 @@ declare module '*.vue' {
 now, run `npm run serve` and visit **http://localhost:9000**  
 you should see *Hello Vuejs* with blue color.  
 
+### Next step
+
+Our css is working, but in real world we may use it will processers, such as sass, less, stylus etc...  
+in next episode let make sass working  
+
+Quick link => [webpack-and-sass](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-and-sass.md)
+
 #### Reference
 - [vue-laoder](https://vue-loader.vuejs.org/)
 - [vue-class-component](https://github.com/vuejs/vue-class-component)

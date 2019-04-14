@@ -10,25 +10,29 @@ const devServer = {
   port: 9000
 }
 
-const rules = [
-  {
-    test: /\.tsx?$/,
-    use: {
-      loader: 'ts-loader',
-      options: { appendTsSuffixTo: [/\.vue$/] }
-    },
-    exclude: /node_modules/
-  }, {
-    test: /\.vue$/,
-    loader: 'vue-loader'
-  }, {
-    test: /\.css$/,
-    use: [
-      'vue-style-loader',
-      'css-loader'
-    ]
-  }
-]
+const tsRule = {
+  test: /\.tsx?$/,
+  use: {
+    loader: 'ts-loader',
+    options: { appendTsSuffixTo: [/\.vue$/] }
+  },
+  exclude: /node_modules/
+}
+
+const vueRule = {
+  test: /\.vue$/,
+  loader: 'vue-loader'
+}
+
+const styleRule = {
+  test: /\.s[ac]ss$/,
+  use: [
+    'vue-style-loader',
+    'css-loader',
+    'postcss-loader',
+    'sass-loader'
+  ]
+}
 
 const resolve = {
   extensions: [".tsx", ".ts", ".js"]
@@ -52,6 +56,12 @@ module.exports = {
     path: rootResolve("dist")
   },
   resolve,
-  module: { rules },
+  module: {
+    rules: [
+      tsRule,
+      vueRule,
+      styleRule
+    ]
+  },
   plugins
 }

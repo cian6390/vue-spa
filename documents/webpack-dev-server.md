@@ -146,7 +146,7 @@ module.exports = {
 
 > 提醒！`<script src="/bundle.js"></script>` 要加在 `public/index.html`，而不是 `dist/index.html`
 
-### then?
+### Next step
 有了 `devServer` 看程式解果後，我們可以開始寫一些程式。  
 下一個單元我們要使用 typescript + vue 做點東西，  
 並且設定 webpack 可以將其編譯讓瀏覽器執行。
