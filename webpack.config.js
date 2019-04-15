@@ -29,13 +29,20 @@ const styleRule = {
   use: [
     'vue-style-loader',
     'css-loader',
-    'postcss-loader',
-    'sass-loader'
+    'postcss-loader', {
+      loader: 'sass-loader',
+      options: {
+        data: `@import "@/_variables.scss";`
+      }
+    }
   ]
 }
 
 const resolve = {
-  extensions: [".tsx", ".ts", ".js"]
+  extensions: [".tsx", ".ts", ".js"],
+  alias: {
+    '@': rootResolve('src')
+  }
 }
 
 const plugins = [

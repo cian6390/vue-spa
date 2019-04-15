@@ -13,9 +13,9 @@ export default class App extends Vue {
 
 <style lang="scss" scoped>
 h4 {
-    color: blue;
+    color: $primary;
     &:hover {
-        color: red;
+        color: $success;
     }
 }
 </style>
