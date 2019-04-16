@@ -1,12 +1,11 @@
-
-const path = require("path")
-const CopyPlugin = require("copy-webpack-plugin")
+const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
-const rootResolve = (file) => path.resolve(__dirname, file)
+const rootResolve = file => path.resolve(__dirname, file)
 
 const devServer = {
-  contentBase: rootResolve("dist"),
+  contentBase: rootResolve('dist'),
   port: 9000
 }
 
@@ -29,7 +28,8 @@ const styleRule = {
   use: [
     'vue-style-loader',
     'css-loader',
-    'postcss-loader', {
+    'postcss-loader',
+    {
       loader: 'sass-loader',
       options: {
         data: `@import "@/_variables.scss";`
@@ -39,7 +39,7 @@ const styleRule = {
 }
 
 const resolve = {
-  extensions: [".tsx", ".ts", ".js"],
+  extensions: ['.tsx', '.ts', '.js'],
   alias: {
     '@': rootResolve('src')
   }
@@ -49,26 +49,22 @@ const plugins = [
   new VueLoaderPlugin(),
   new CopyPlugin([
     {
-      from: rootResolve("public/index.html"),
-      to: rootResolve("dist/index.html")
+      from: rootResolve('public/index.html'),
+      to: rootResolve('dist/index.html')
     }
   ])
 ]
 
 module.exports = {
   devServer,
-  entry: "./src/main.ts",
+  entry: './src/main.ts',
   output: {
-    filename: "bundle.js",
-    path: rootResolve("dist")
+    filename: 'bundle.js',
+    path: rootResolve('dist')
   },
   resolve,
   module: {
-    rules: [
-      tsRule,
-      vueRule,
-      styleRule
-    ]
+    rules: [tsRule, vueRule, styleRule]
   },
   plugins
 }

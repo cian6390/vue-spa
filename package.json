@@ -8,7 +8,7 @@
     "build": "rimraf dist && webpack",
     "serve": "webpack-dev-server",
     "lint": "eslint \"src/**/*.{ts,vue}\"",
-    "format": "prettier --write \"src/**/*.{ts,vue}\""
+    "format": "prettier --write \"./**/*.{js,ts,vue}\""
   },
   "husky": {
     "hooks": {
@@ -22,8 +22,6 @@
   "keywords": [
     "vue",
     "spa",
-    "i18n",
-    "ssr",
     "typescript"
   ],
   "author": "Cian.h",
