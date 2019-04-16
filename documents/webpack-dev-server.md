@@ -29,6 +29,9 @@ npm install --save-dev rimraf copy-webpack-plugin webpack-dev-server
 const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
 
+const isProd = process.env.NODE_ENV === 'production'
+const mode = isProd ? 'production' : 'development'
+
 const rootResolve = (file) => path.resolve(__dirname, file)
 
 const rules = [
@@ -53,6 +56,7 @@ const plugins = [
 ]
 
 module.exports = {
+  mode,
   entry: "./src/main.ts",
   output: {
     filename: "bundle.js",
@@ -74,6 +78,9 @@ module.exports = {
 
 const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
+
+const isProd = process.env.NODE_ENV === 'production'
+const mode = isProd ? 'production' : 'development'
 
 const rootResolve = (file) => path.resolve(__dirname, file)
 
@@ -105,6 +112,7 @@ const plugins = [
 ]
 
 module.exports = {
+  mode,
   devServer,    // 將 devServer 設定加入
   entry: "./src/main.ts",
   output: {

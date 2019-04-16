@@ -30,7 +30,7 @@ module.exports = {
     // 以下 "index" 規則是一個範例
     // 當 prettier 規則與 eslint 衝突時，應該先將其關閉(設為"off")
     // 然後再寫入個人或團隊所想要的規則。
-    'indent': 'off',
+    indent: 'off',
     '@typescript-eslint/indent': ['error', 2]
   }
 }

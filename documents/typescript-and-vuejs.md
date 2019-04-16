@@ -93,6 +93,9 @@ const path = require("path")
 const CopyPlugin = require("copy-webpack-plugin")
 const VueLoaderPlugin = require('vue-loader/lib/plugin')  // import vue-loader 插件
 
+const isProd = process.env.NODE_ENV === 'production'
+const mode = isProd ? 'production' : 'development'
+
 const rootResolve = (file) => path.resolve(__dirname, file)
 
 const devServer = {
@@ -140,6 +143,7 @@ const plugins = [
 ]
 
 module.exports = {
+  mode,
   devServer,
   entry: "./src/main.ts",
   output: {

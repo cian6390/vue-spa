@@ -36,7 +36,11 @@ npm install --save-dev ts-loader
 // webpack.config.js
 const path = require("path")
 
+const isProd = process.env.NODE_ENV === 'production'
+const mode = isProd ? 'production' : 'development'
+
 module.exports = {
+  mode,
   entry: "./src/main.ts",
   module: {
     rules: [

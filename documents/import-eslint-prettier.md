@@ -230,6 +230,13 @@ module.exports = {
 }
 ```
 
+## 下一步
+
+現在我們可以寫 typescript、也可以使用命令檢查程式語法、格式  
+該是時候導入測試工具了
+
+傳送門 => [import-test](https://github.com/cian6390/vue-spa/blob/master/documents/import-test.md)
+
 #### 參考資料
 - [ESLint](https://eslint.org/)
 - [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
