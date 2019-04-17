@@ -5,8 +5,7 @@
 有興趣的朋友可以看看[建構流程文件](##Documents)，並指正錯誤。  
 當然如果你喜歡，歡迎 fork。  
 
-## Structure
-這是整個專案還沒開始安裝套件時就先建立起來的基礎架構。
+## 專案結構
 
 - src/  
     程式的主要目錄。  
@@ -24,25 +23,16 @@
 - public/  
     放一些靜態且不需要經過 webpack 處理的東西。  
     - index.html  
-        使用者訪問網站的唯一 html 檔案，  
-        在 `ssr` 模式底下這支檔案不會被用到。
+        使用者訪問網站的唯一 html 檔案。  
 - documents/  
     工具、套件等等的設定說明文件。
 
-## Packages
-在深入各個工具、套件之前，確保完成以下基本套件的安裝，  
-當前這份文件只做安裝，具體配置將會分配在[各個文件](##Documents)之中。
-- [nvm](##NVM)
-- [vscode](###vscode)
-- [typescript](###typescript)
-- [eslint, prettier](###eslint-prettier)
-- [jest](###jest)
-- [webpack](###webpack)
-- [vue](###vuejs)
-- [apollo](###apollo)
+## 前置作業
+在深入各個工具、套件之前，確保完成 [nodejs 安裝](###NVM)完成，  
+如果沒有選定開發工具，這裡推薦使用 [VSCode](###VisualStudioCode)  
+具體建構專案流程將會分配在[各個文件](##建構流程)之中。
 
 ### [NVM](https://github.com/creationix/nvm)
-若開發環境已經有 nodejs 可以跳過這個步驟。
 ```shell
 # 安裝 nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
@@ -52,62 +42,27 @@ export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # 安裝當前 nodejs lts 版本 v10
+# 也可以使用 v11
 nvm install 10
 ```
 
-### [Visual Studio Code](https://code.visualstudio.com/)
+### [VisualStudioCode](https://code.visualstudio.com/)
 安裝以下幾個 vscode 插件，確保之後開發的語法高亮以及風格檢查可以正確執行。  
-不曉得如何在 vscode 安裝插件嗎？請參考 [Managing Extensions in Visual Studio Code](https://code.visualstudio.com/docs/editor/extension-gallery)。
+不曉得如何在 vscode 安裝插件嗎？
+請參考 [Managing Extensions in Visual Studio Code](https://code.visualstudio.com/docs/editor/extension-gallery)。
 - ESLint
 - Prettier - Code formatter
 - Vetur
 
-### [TypeScript](https://www.typescriptlang.org/)
-安裝並建立定檔。
-```shell
-npm install --save-dev typescript
-touch ./tsconfig.json
-```
+## 建構流程
+在完成[前置作業](##前置作業)之後，接著依照以下順序設定各個工具、套件。  
 
-### [ESLint](https://eslint.org/), [Prettier](https://prettier.io/)
-安裝並建立定檔。
-```shell
-npm install --save-dev eslint prettier
-touch ./.eslintrc.json
-touch ./.eslintignore
-touch ./.prettierrc
-```
-
-### [Jest](https://jestjs.io/)
-安裝並建立定檔。
-```shell
-npm install --save-dev jest
-npx jest --init
-```
-
-### [Webpack](https://webpack.js.org/)
-安裝並建立定檔。
-```shell
-npm install --save-dev webpack webpack-cli
-touch ./webpack.config.js
-```
-
-### [Vue](https://vuejs.org/)
-安裝 vuejs 以及相關生態系統插件。
-```
-npm install --save vue vuex vue-router vue-i18n
-```
-
-### [Apollo](https://www.apollographql.com/)
-如果你有興趣，並且想要將 Apollo-GraphQL 加入至專案  
-在了解什麼是 [GraphQL](https://graphql.org/) 之後，請參考 [apollo](#) 文件。  
-
-## Documents
-在安裝[基本套件](##Packages)之後，接著依照以下順序設定各個工具、套件。
-- [typescript and webpack](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-webpack.md)
-- [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md)
-- [typescript and vuejs](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-and-vuejs.md)
-- [more in progress ... ](#)
+- [EP1. webpack 與 typescript](https://github.com/cian6390/vue-spa/blob/master/documents/ep1-typescript-webpack.md)
+- [EP2. webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep2-webpack-dev-server.md)
+- [EP3. 使用 typescript 寫 Vue 元件](https://github.com/cian6390/vue-spa/blob/master/documents/ep3-typescript-and-vuejs.md)
+- [EP4. webpack 與 sass/scss](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
+- [EP5. 導入 eslint 與 prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
+- [EP6. 導入測試](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
 
 ## Advantage
 Even the development is working, but that not everything  

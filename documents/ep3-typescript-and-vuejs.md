@@ -255,7 +255,7 @@ declare module '*.vue' {
 雖然我們的 `.vue` 文件已經可以被 webpack 處理，但樣式處理器的部分還不夠好  
 下一個步我們來導入 webpack `sass/scss` 處理器。
 
-傳送門 => [webpack-and-sass](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-and-sass.md)
+傳送門 => [webpack-and-sass](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
 
 #### Reference
 - [vue-laoder](https://vue-loader.vuejs.org/)

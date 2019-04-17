@@ -159,7 +159,7 @@ module.exports = {
 下一個單元我們要使用 typescript + vue 做點東西，  
 並且設定 webpack 可以將其編譯讓瀏覽器執行。
 
-傳送門 => [typescript and vuejs](https://github.com/cian6390/vue-spa/blob/master/documents/typescript-and-vuejs.md)
+傳送門 => [typescript and vuejs](https://github.com/cian6390/vue-spa/blob/master/documents/ep3-typescript-and-vuejs.md)
 
 #### 相關文件
 - [webpack/webpack-dev-server](https://github.com/webpack/webpack-dev-server)

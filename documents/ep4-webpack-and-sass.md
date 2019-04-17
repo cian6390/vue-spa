@@ -251,7 +251,7 @@ h4 {
 現在，我們專案中幾個最重要的基本功能已經可以運作，可是程式顯得有點凌亂  
 這時候是導入程式語法、風格檢查器的好時機。
 
-傳送門 => [import-eslint-prettier](https://github.com/cian6390/vue-spa/blob/master/documents/import-eslint-prettier.md)
+傳送門 => [import-eslint-prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
 
 #### Reference
 - [browserlist](https://github.com/browserslist/browserslist)
