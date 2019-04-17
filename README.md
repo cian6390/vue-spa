@@ -1,9 +1,20 @@
 # vue-spa
 這個 Repo 是一個基礎於 typescript 的 vue-spa 前端手腳架。  
-僅用於練習搭建並記錄一個涵蓋以下[套件](##Packages)的前端開發環境  
+僅用於練習搭建並記錄一個涵蓋以下[目標功能](##目標)的前端開發環境  
 隨著各個套件的更新(出新)，這裡會做相對應的更新，因此不會將此 Repo 加入真實專案的內容。  
-有興趣的朋友可以看看[建構流程文件](##Documents)，並指正錯誤。  
+有興趣的朋友可以看看[建構流程文件](##建構流程)，並指正錯誤。  
 當然如果你喜歡，歡迎 fork。  
+
+## 目標
+- 靜態型別
+- 單元測試
+- 語法、風格檢查工具
+- 基於 Vuejs 系統  
+    - 元件
+    - 路由
+    - 狀態管理
+    - 多國語言
+- Progress Web App
 
 ## 專案結構
 
@@ -63,10 +74,3 @@ nvm install 10
 - [EP4. webpack 與 sass/scss](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
 - [EP5. 導入 eslint 與 prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
 - [EP6. 導入測試](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
-
-## Advantage
-Even the development is working, but that not everything  
-We still have a lot stuff to imporve it  
-And it will always like that ...  
-<br>
-Comming soon ...
