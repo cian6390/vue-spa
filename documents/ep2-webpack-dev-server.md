@@ -28,6 +28,26 @@ npm install --save-dev rimraf copy-webpack-plugin webpack-dev-server
 
 ## 設定
 
+### public/index.html
+
+建立網站主要 html 檔案 `public/index.html`
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue-spa example</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="/bundle.js"></script>
+</body>
+</html>
+```
+
 ### rimraf
 將 packages.json 中的 scripts 欄位中的 `"build": "webpack"` 改為以下
 ```
