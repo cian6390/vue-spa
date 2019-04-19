@@ -219,7 +219,7 @@ const styleRule = {
       options: {
         // 想像 webpack 只是把這行寫在每個 scss 文件的頂端
         // 當然也可以注入更多的檔案。
-        data: `@import '@/_variables.scss;`
+        data: `@import '@/_variables.scss';`
       }
     }
   ]
