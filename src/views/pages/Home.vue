@@ -1,45 +1,17 @@
 <script lang="ts">
+import foods from '@/config/foods';
 import { Vue, Component } from 'vue-property-decorator';
 
 let timer;
 
-function food(name: string, distance: 'close' | 'soso' | 'far') {
-  return {
-    name,
-    distance
-  };
-}
-
 @Component
 export default class Home extends Vue {
-  foodList: { name: string; distance: string }[] = [
-    food('牛肉麵', 'close'),
-    food('麥當勞', 'soso'),
-    food('家樂福 - 爭鮮', 'soso'),
-    food('家樂福 - 定食8', 'soso'),
-    food('家樂福 - 花月嵐', 'soso'),
-    food('家樂福 - 樓下', 'soso'),
-    food('八方雲集', 'close'),
-    food('小初店', 'far'),
-    food('小初店', 'far'),
-    food('飯殿', 'close'),
-    food('烏龍麵', 'close'),
-    food('自助餐', 'close'),
-    food('自助餐', 'close'),
-    food('豪小子', 'far'),
-    food('水餃', 'far'),
-    food('K 布朗 (帕尼尼)', 'far'),
-    food('微笑咖哩', 'far'),
-    food('Louisa', 'soso'),
-    food('樹太老', 'soso'),
-    food('OKKO', 'close'),
-    food('糊塗麵', 'far'),
-    food('蒸餃', 'far'),
-    food('Subway', 'far'),
-    food('溫沙拉', 'far'),
-    food('海南雞飯', 'far'),
-    food('空海', 'soso')
-  ];
+  foodList: { name: string; distance: string }[] = foods.map(food => {
+    return {
+      name: food[0],
+      distance: food[1]
+    };
+  });
 
   filters: {
     close: boolean;

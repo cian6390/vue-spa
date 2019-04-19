@@ -3,6 +3,10 @@
     "module": "esnext",
     "target": "es5",
     "moduleResolution": "node",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
   }
 }

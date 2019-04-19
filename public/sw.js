@@ -1,5 +1,5 @@
 // 定義 cache 名稱
-const CACHE_NAME = 'vue-spa-example-v1.0.1';
+const CACHE_NAME = 'vue-spa-example-v1.0.2';
 // 該 cache 所想要 cache 的目標
 const urlsToCache = [
   '/',

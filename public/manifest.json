@@ -1,6 +1,6 @@
 {
-  "name": "Vue SPA Example",
-  "short_name": "VSE",
+  "name": "中午吃什麼?",
+  "short_name": "中午吃什麼?",
   "icons": [
     {
       "src": "images/icon-144x144.png",
@@ -15,6 +15,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#3E4EB8",
+  "background_color": "#F9B32C",
   "theme_color": "#2F3BA2"
 }
