@@ -63,7 +63,7 @@ if (isProduction && supportServiceWorker) {
 // 定義 cache 名稱
 const CACHE_NAME = 'vue-spa-example-v1'
 // 該 cache 所想要 cache 的目標
-const urlsToCache = ['/', '/bundle.js']
+const urlsToCache = ['/', '/bundle.js', '/images/vue.png']
 
 // 等待 instaall 事件
 // 並且在 install 停留直到 cache 被打開
@@ -152,3 +152,10 @@ const plugins = [
 ]
 // ... 一些其他設定
 ```
+
+## 下一步
+
+現在我們知道怎麼讓資源可被離線瀏覽  
+下一步就可以來讓我們的網站像個 App 那樣安裝到手機之中！
+
+傳送門 => [EP9. manifest.json](https://github.com/cian6390/vue-spa/blob/master/documents/ep9-manifest.md)

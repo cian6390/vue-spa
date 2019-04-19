@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && webpack",
+    "build": "NODE_ENV=production rimraf dist && webpack",
     "serve": "webpack-dev-server",
     "lint": "eslint \"src/**/*.{ts,vue}\"",
     "format": "prettier --write \"./**/*.{js,ts,vue}\""

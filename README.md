@@ -77,3 +77,4 @@ nvm install 10
 - [EP6. 導入測試](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
 - [EP7. https-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep7-https-dev-server.md)
 - [EP8. ServiceWorker](https://github.com/cian6390/vue-spa/blob/master/documents/ep8-serviceworker.md)
+- [EP9. manifest.json](https://github.com/cian6390/vue-spa/blob/master/documents/ep9-manifest.md)

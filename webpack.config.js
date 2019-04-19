@@ -67,6 +67,10 @@ const plugins = [
       to: rootResolve('dist/sw.js')
     },
     {
+      from: rootResolve('public/manifest.json'),
+      to: rootResolve('dist/manifest.json')
+    },
+    {
       from: rootResolve('public/images'),
       to: rootResolve('dist/images')
     }

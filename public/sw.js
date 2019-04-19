@@ -1,7 +1,12 @@
 // 定義 cache 名稱
 const CACHE_NAME = 'vue-spa-example-v1'
 // 該 cache 所想要 cache 的目標
-const urlsToCache = ['/', '/bundle.js']
+const urlsToCache = [
+  '/',
+  '/bundle.js',
+  '/images/icon-144x144.png',
+  '/images/icon-152x152.png'
+]
 
 // 等待 instaall 事件
 // 並且在 install 停留直到 cache 被打開
