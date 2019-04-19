@@ -43,7 +43,7 @@ babel 的核心套件，只要需要使用到 babel，就必須安裝
 #### @types/jest
 由於我們使用 ts 來寫測試，因此需要安裝來自於 [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) 的 jest 型別。  
 
-### 快速安裝
+#### 快速安裝
 
 ```shell
 npm install --sav-dev @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env @babel/preset-typescript
@@ -56,7 +56,7 @@ touch ./jest.config.js
 1. 設定 babel，使其幫我們轉換 es 模組、vue 文件至 node 看得懂的文件
 2. 設定 jest，讓 jest 知道在測試時，面對不同的文件，該如何處理
 
-### 設定 jest
+### Jest
 ```javascript
 module.exports = {
   // 讓 jest 知道要處理以下這幾種類型的文件
@@ -74,7 +74,7 @@ module.exports = {
 }
 ```
 
-### 設定 babel
+### Babel
 ```javascript
 module.exports = api => {
   // 判斷是否為測試環境的 flag

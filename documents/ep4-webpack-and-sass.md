@@ -1,8 +1,8 @@
 
 # Webpack and Sass
 
-在我們開始本文內容之前，我們先將 webpack.config.js 做一點重構
-這次的重構，我們僅僅是將一些 rule 分離出來，方便閱讀
+在我們開始本文內容之前，我們先將 webpack.config.js 做一點重構  
+這次的重構，我們僅僅是將一些`規則`分離出來，方便閱讀
 
 ```javascript
 // webpack.config.js
@@ -97,7 +97,7 @@ module.exports = {
 ### [sass-loader](https://github.com/webpack-contrib/sass-loader)
 讓 webpack 與 sass 合作的工具
 
-### 快速安裝
+#### 快速安裝
 
 ```shell
 npm install --save-dev node-sass postcss autoprefixer sass-loader postcss-loader

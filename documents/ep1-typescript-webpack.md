@@ -1,6 +1,6 @@
 
 # TypeScript
-將 typescript 安裝至目錄後，事實上可以使用 `npx tsc` 命令編譯 `.ts` 文件，  
+安裝 typescript 至專案後，事實上可以使用 `npx tsc` 命令編譯 `.ts` 文件，  
 但以現代前端開發來說，僅編譯 `.ts` 是不夠的，通常會搭配 webpack 一起打包程式。  
 這個文件說明該如何讓 webpack 編譯 `.ts` 文件。  
 
@@ -20,7 +20,7 @@ typescript 型別檢查，使開發更有效率
 
 webpack 中處理 typescript 的 loader
 
-### 快速安裝
+#### 快速安裝
 
 ```shell
 npm install --save-dev webpack webpack-cli typescript ts-loader

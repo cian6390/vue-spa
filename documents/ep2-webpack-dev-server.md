@@ -20,6 +20,8 @@
 
 兼容個平台的刪除工具。
 
+#### 快速安裝
+
 ```shell
 npm install --save-dev rimraf copy-webpack-plugin webpack-dev-server
 ```

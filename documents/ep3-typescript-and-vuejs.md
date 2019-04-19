@@ -1,7 +1,7 @@
 
 # TypeScript and Vuejs
 
-在 javascript 建立原件非常容易，但我們也因此失去了編輯器的智能推斷功能。 
+在 javascript 建立原件非常容易，但我們也因此失去了編輯器的智能推斷功能。  
 而 typescript 中由於我們使用 `class` 來建立 Vue 元件, 因此編輯器能夠智能推斷上下文。 
 
 Vuejs 的作者去時上有很貼心的為開發者寫了一個庫叫做 `vue-class-component`  
@@ -65,12 +65,6 @@ export default class CustomComponent extends Vue {
 好了，現在我們已經知道 typescript 可以帶給我們什麼好處
 現在我們就開始將 typescript 導入專案
 
-## Dependencies
-- css-loader
-- vue-loader
-- vue-style-loader
-- vue-template-compiler
-- vue-property-decorator
 ## 依賴
 ### [css-loader](https://webpack.js.org/loaders/css-loader/#root)
 webpack 的 css 處理器
@@ -89,7 +83,7 @@ vuejs 作者所維護的套件，讓我們能夠以 class 的方式寫 VueCompon
 ### [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
 這是 vue-class-component 套件的在封裝，提供更多的 `decorator`。
 
-### 快速安裝
+#### 快速安裝
 ```shell
 npm install --save-dev css-loader vue-loader vue-template-compiler vue-style-loader vue-property-decorator
 ```

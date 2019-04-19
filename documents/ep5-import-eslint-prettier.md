@@ -20,16 +20,12 @@
 ### [husky](https://github.com/typicode/husky)
 Git hook 工具。
 
-### 快速安裝
+#### 快速安裝
 
 ```shell
-# eslint and typescript
 npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-# eslint and prettier
 npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
-# eslint and vue
 npm install --save-dev eslint-plugin-vue
-# git hook
 npm install --save-dev husky
 touch ./eslintrc.js
 touch .eslintignore
