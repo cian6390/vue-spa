@@ -109,7 +109,7 @@ export default class Home extends Vue {
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: orange;
+    background-color: $primary;
   }
   main {
     width: 100%;
@@ -141,7 +141,7 @@ export default class Home extends Vue {
         background-color: #fff;
         &.active {
           color: #fff;
-          background-color: orange;
+          background-color: $primary;
         }
         &:not(:last-child) {
           margin-right: 2px;

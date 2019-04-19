@@ -1,20 +1,20 @@
 {
-  "name": "中午吃什麼?",
-  "short_name": "中午吃什麼?",
+  "name": "中午吃什麼",
+  "short_name": "中午吃什麼",
   "icons": [
     {
-      "src": "images/icon-144x144.png",
+      "src": "images/icon-144x144-1.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "images/icon-152x152.png",
+      "src": "images/icon-152x152-1.png",
       "sizes": "152x152",
       "type": "image/png"
     }
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#F9B32C",
-  "theme_color": "#2F3BA2"
+  "background_color": "#f5f5f5",
+  "theme_color": "#f5f5f5"
 }
