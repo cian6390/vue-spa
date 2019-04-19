@@ -1,5 +1,5 @@
 
-# Jest
+# 測試
 
 ## 依賴
 
@@ -161,5 +161,7 @@ test('App should render  the msg prop', () => {
 
 ## 下一步
 
-到目前為止，專案已經導入大部分的主要功能  
-但有些設定並不夠完善，下一步，在我們繼續往前之前，把專案稍作整理。
+在切入到 PWA 之前，我們需要先準備好 https 的開發環境  
+因為 PWA 建立在 ServiceWorker 之上，而 ServiceWorker 只能工作在 https 的站點  
+
+傳送門 => [ep7-https-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep7-https-dev-server.md)

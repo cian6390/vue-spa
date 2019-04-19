@@ -14,7 +14,8 @@
     - 路由
     - 狀態管理
     - 多國語言
-- Progress Web App
+- Progress Web App  
+    - ServiceWorker
 
 ## 專案結構
 
@@ -74,3 +75,4 @@ nvm install 10
 - [EP4. webpack 與 sass/scss](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
 - [EP5. 導入 eslint 與 prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
 - [EP6. 導入測試](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
+- [EP7-https-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep7-https-dev-server.md)

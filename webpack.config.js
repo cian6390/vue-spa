@@ -1,15 +1,22 @@
+const fs = require('fs')
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
+require('dotenv').config()
+const env = process.env
 const isProd = process.env.NODE_ENV === 'production'
 const mode = isProd ? 'production' : 'development'
-
 const rootResolve = file => path.resolve(__dirname, file)
 
 const devServer = {
   contentBase: rootResolve('dist'),
-  port: 9000
+  port: 9000,
+  https: {
+    key: fs.readFileSync(env.HTTPS_KEY),
+    cert: fs.readFileSync(env.HTTPS_CRT),
+    ca: fs.readFileSync(env.HTTPS_ROOTCA)
+  }
 }
 
 const tsRule = {
@@ -54,6 +61,10 @@ const plugins = [
     {
       from: rootResolve('public/index.html'),
       to: rootResolve('dist/index.html')
+    },
+    {
+      from: rootResolve('public/service-worker.js'),
+      to: rootResolve('dist/service-worker.js')
     }
   ])
 ]
