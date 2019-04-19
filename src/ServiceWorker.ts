@@ -1,6 +1,6 @@
-const isProduction = process.env.NODE_ENV === 'production'
-const supportServiceWorker = 'serviceWorker' in navigator
-const sw = '/sw.js'
+const isProduction = process.env.NODE_ENV === 'production';
+const supportServiceWorker = 'serviceWorker' in navigator;
+const sw = '/sw.js';
 if (isProduction && supportServiceWorker) {
   window.addEventListener('load', function() {
     navigator.serviceWorker
@@ -9,10 +9,10 @@ if (isProduction && supportServiceWorker) {
         console.log(
           'ServiceWorker registration successful with scope: ',
           registration.scope
-        )
+        );
       })
       .catch(function(err) {
-        console.log('ServiceWorker registration failed: ', err)
-      })
-  })
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  });
 }

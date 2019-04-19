@@ -1,6 +1,6 @@
 <script lang="ts">
-import Home from '@/views/pages/Home.vue'
-import { Vue, Component } from 'vue-property-decorator'
+import Home from '@/views/pages/Home.vue';
+import { Vue, Component } from 'vue-property-decorator';
 
 @Component({ components: { Home } })
 export default class App extends Vue {}

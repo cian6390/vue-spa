@@ -1,59 +1,92 @@
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator';
 
-let timer
+let timer;
 
-function food(name: string, price: number) {
+function food(name: string, distance: 'close' | 'soso' | 'far') {
   return {
     name,
-    price
-  }
+    distance
+  };
 }
 
 @Component
 export default class Home extends Vue {
-  foodOptions: { name: string; price: number }[] = [
-    food('牛肉麵', 120),
-    food('麥當勞', 140),
-    food('家樂福 - 爭鮮', 300),
-    food('家樂福 - 定食8', 200),
-    food('家樂福 - 花月嵐', 160),
-    food('八方雲集', 120),
-    food('小初店', 80),
-    food('飯殿', 80),
-    food('烏龍麵', 160),
-    food('自助餐', 80),
-    food('豪小子', 200),
-    food('水餃', 80),
-    food('K 布朗', 160),
-    food('咖哩', 160),
-    food('路易莎', 120),
-    food('樹太老', 300)
-  ]
-  active: string = ''
+  foodList: { name: string; distance: string }[] = [
+    food('牛肉麵', 'close'),
+    food('麥當勞', 'soso'),
+    food('家樂福 - 爭鮮', 'soso'),
+    food('家樂福 - 定食8', 'soso'),
+    food('家樂福 - 花月嵐', 'soso'),
+    food('家樂福 - 樓下', 'soso'),
+    food('八方雲集', 'close'),
+    food('小初店', 'far'),
+    food('小初店', 'far'),
+    food('飯殿', 'close'),
+    food('烏龍麵', 'close'),
+    food('自助餐', 'close'),
+    food('自助餐', 'close'),
+    food('豪小子', 'far'),
+    food('水餃', 'far'),
+    food('K 布朗 (帕尼尼)', 'far'),
+    food('微笑咖哩', 'far'),
+    food('Louisa', 'soso'),
+    food('樹太老', 'soso'),
+    food('OKKO', 'close'),
+    food('糊塗麵', 'far'),
+    food('蒸餃', 'far'),
+    food('Subway', 'far'),
+    food('溫沙拉', 'far'),
+    food('海南雞飯', 'far'),
+    food('空海', 'soso')
+  ];
+
+  filters: {
+    close: boolean;
+    soso: boolean;
+    far: boolean;
+  } = {
+    close: true,
+    soso: true,
+    far: true
+  };
+
+  active: string = '';
+
+  get filteredOptions() {
+    const rules: string[] = [];
+    for (let filter of Object.entries(this.filters)) {
+      const [key, value] = filter;
+      if (value) rules.push(key);
+    }
+
+    return this.foodList.filter(food => rules.includes(food.distance));
+  }
 
   get optionsLen() {
-    return this.foodOptions.length - 1
+    return this.filteredOptions.length - 1;
   }
 
   start() {
     timer = setInterval(() => {
-      this.active = this.foodOptions[
+      this.active = this.filteredOptions[
         this.randomBetween(0, this.optionsLen)
-      ].name
-    }, 250)
+      ].name;
+    }, 250);
   }
 
   deal() {
-    clearInterval(timer)
+    clearInterval(timer);
   }
 
   random() {
-    this.active = this.foodOptions[this.randomBetween(0, this.optionsLen)].name
+    this.active = this.filteredOptions[
+      this.randomBetween(0, this.optionsLen)
+    ].name;
   }
 
   randomBetween(min: number, max: number) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }
 </script>
@@ -62,11 +95,30 @@ export default class Home extends Vue {
   <div class="home-page">
     <header>中午吃什麼？</header>
     <main>
-      <div>
+      <div class="answer-row">
         <span @click="deal">{{ active }}</span>
       </div>
     </main>
-    <footer @click="random">隨機</footer>
+    <footer>
+      <div class="buttons-row">
+        <button
+          :class="{ active: filters.close }"
+          @click="filters.close = !filters.close"
+          v-text="'附近'"
+        />
+        <button
+          :class="{ active: filters.soso }"
+          @click="filters.soso = !filters.soso"
+          v-text="'普通'"
+        />
+        <button
+          :class="{ active: filters.far }"
+          @click="filters.far = !filters.far"
+          v-text="'遠'"
+        />
+      </div>
+      <button @click="random">隨機</button>
+    </footer>
   </div>
 </template>
 
@@ -91,20 +143,58 @@ export default class Home extends Vue {
     width: 100%;
     flex: 1 1 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 28px;
+    .answer-row {
+      height: 35px;
+    }
   }
   footer {
     flex: none;
     width: 100%;
-    height: 60px;
-    display: flex;
-    color: #fff;
-    font-size: 18px;
-    align-items: center;
-    justify-content: center;
-    background-color: #666;
+    height: 120px;
+    .buttons-row {
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      justify-items: flex-start;
+      margin-bottom: 10px;
+      button {
+        width: 80px;
+        height: 40px;
+        border: 0;
+        color: #333;
+        background-color: #fff;
+        &.active {
+          color: #fff;
+          background-color: orange;
+        }
+        &:not(:last-child) {
+          margin-right: 2px;
+        }
+        &:first-child {
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+        &:last-child {
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+    button {
+      border: none;
+      height: 80px;
+      width: 100%;
+      display: flex;
+      color: #fff;
+      font-size: 18px;
+      align-items: center;
+      justify-content: center;
+      background-color: #666;
+    }
   }
 }
 </style>
