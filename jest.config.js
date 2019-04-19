@@ -10,5 +10,10 @@ module.exports = {
   // 像是 webpack 的 alias 設定，我們也需要告訴 jest '@' 所代表的位置
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
+  },
+  globals: {
+    'ts-jest': {
+      babelConfig: 'babelrc.config.js'
+    }
   }
 }

@@ -46,9 +46,10 @@ babel 的核心套件，只要需要使用到 babel，就必須安裝
 #### 快速安裝
 
 ```shell
-npm install --sav-dev @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env @babel/preset-typescript
-npm install --save-dev jest babel-core @types/jest vue-jest babel-jest @vue/test-utils
+npm install --save-dev @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env @babel/preset-typescript
+npm install --save-dev jest @types/jest vue-jest babel-jest @vue/test-utils babel-core@7.0.0-bridge.0
 touch ./jest.config.js
+touch ./babel.config.js
 ```
 
 ## 設定
@@ -56,7 +57,7 @@ touch ./jest.config.js
 1. 設定 babel，使其幫我們轉換 es 模組、vue 文件至 node 看得懂的文件
 2. 設定 jest，讓 jest 知道在測試時，面對不同的文件，該如何處理
 
-### Jest
+### jest.config.js
 ```javascript
 module.exports = {
   // 讓 jest 知道要處理以下這幾種類型的文件
@@ -70,6 +71,11 @@ module.exports = {
   // 像是 webpack 的 alias 設定，我們也需要告訴 jest '@' 所代表的位置
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
+  },
+  globals: {
+    'ts-jest': {
+      babelConfig: 'babelrc.config.js'
+    }
   }
 }
 ```
@@ -120,22 +126,9 @@ module.exports = api => {
 }
 ```
 
-```javascript
-// jest.config.js
-module.exports = {
-  jest: {
-    moduleFileExtensions: ['js', 'json', 'vue'],
-    transform: {
-      '^.+\\.js$': 'babel-jest',
-      '^.+\\.vue$': 'vue-jest'
-    }
-  }
-}
-```
-
 ## 使用
 
-新增一隻測試檔案 `test/App.spec.ts` 並輸入以下內容  
+新增一隻測試檔案 `tests/App.spec.ts` 並輸入以下內容  
 
 ```typescript
 // tests/App.spec.ts
