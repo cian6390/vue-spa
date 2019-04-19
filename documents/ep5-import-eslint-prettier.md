@@ -27,9 +27,9 @@ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslin
 npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
 npm install --save-dev eslint-plugin-vue
 npm install --save-dev husky
-touch ./eslintrc.js
-touch .eslintignore
-touch ./prettierrc.js
+touch ./.eslintrc.js
+touch ./.eslintignore
+touch ./.prettierrc.js
 ```
 
 > 使用 `*.js`，的原因是因為 `js` 格式比 `json` 格式更靈活。  
@@ -127,7 +127,7 @@ module.exports = {
   ],
   rules: {
     // 一些個人或團隊的自定義規則
-    "@typescript-eslint/explicit-function-return-type": false
+    "@typescript-eslint/explicit-function-return-type": false,
     // 以下 "index" 規則是一個範例
     // 當 prettier 規則與 eslint 衝突時，應該先將其關閉(設為"off")
     // 然後再寫入個人或團隊所想要的規則。
