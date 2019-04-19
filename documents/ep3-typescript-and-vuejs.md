@@ -71,21 +71,32 @@ export default class CustomComponent extends Vue {
 - vue-style-loader
 - vue-template-compiler
 - vue-property-decorator
+## 依賴
+### [css-loader](https://webpack.js.org/loaders/css-loader/#root)
+webpack 的 css 處理器
 
+### [vue-laoder](https://vue-loader.vuejs.org/)
+webpack 的 vue 文件處理器  
+> 使用 vue-loader 的同時，也需要安裝 vue-template-compiler，但不需要額外設定
+
+### [vue-style-loader](https://github.com/vuejs/vue-style-loader)
+這是 vuejs 作者將 [style-loader](https://webpack.js.org/loaders/style-loader/#root) 的再封裝樣式處理器
+特別用於 vue 文件，多提供一些 style-loader 所沒有的特性。
+
+### [vue-class-component](https://github.com/vuejs/vue-class-component)
+vuejs 作者所維護的套件，讓我們能夠以 class 的方式寫 VueComponent
+
+### [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
+這是 vue-class-component 套件的在封裝，提供更多的 `decorator`。
+
+### 快速安裝
 ```shell
-npm install --save-dev css-loader vue-loader vue-style-loader vue-template-compiler vue-property-decorator
+npm install --save-dev css-loader vue-loader vue-template-compiler vue-style-loader vue-property-decorator
 ```
 
-我們需要 `vue-loader` 讓 webpack 編譯編譯 `.vue` 文件。
-而且，我們也希望 `.vue` 文件中的樣式能夠正確被編譯，因此 `css-laoder` 與 `vue-style-loader` 也是必要的。
-事實上我們需要更多的配置來讓我們可以使用 css 預處理器，但我們不現在配置。
+## 設定
 
-現在，我們需要先調整 webpack.config.js
-1. import `vue-loader/lib/plugin`
-2. add new rule of `.css` file
-2. add new rule of `.vue` file
-4. update rule of `.ts` to make it compile ts block of `.vue` file.
-5. push the loader plugin in to webpack plugins
+### webpack.config.js
 
 ```javascript
 // webpack.config.js
@@ -156,13 +167,13 @@ module.exports = {
 }
 ```
 
-建立一個 `App.vue` 文件來給 webpack 處理！！  
+接著建立一個 `App.vue` 文件來給 webpack 處理！！  
 
 ```shell
-touch /src/App.vue
+touch ./src/App.vue
 ```
 
-將以下內容複製到 `src/App.vue`，這只是一個很簡單的 VueComponent  
+將以下內容複製到 `src/App.vue`，這只是一個很簡單的 `VueComponent`  
 
 ```typescript
 <script lang="ts">
@@ -250,15 +261,9 @@ declare module '*.vue' {
 現在，問題都解決了！關閉並再次執行 `npm run serve` 來使剛剛的設定生效。
 這時候訪問 **http://localhost:9000** 應該要能夠看到藍色的 *Hello Vuejs*
 
-### 下一步
+## 下一步
 
-雖然我們的 `.vue` 文件已經可以被 webpack 處理，但樣式處理器的部分還不夠好  
+雖然我們的 `.vue` 文件已經可以被 webpack 處理，但樣式處理的部分顯然不夠好  
 下一個步我們來導入 webpack `sass/scss` 處理器。
 
 傳送門 => [webpack-and-sass](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
-
-#### Reference
-- [vue-laoder](https://vue-loader.vuejs.org/)
-- [vue-class-component](https://github.com/vuejs/vue-class-component)
-- [vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
-- [Compiler Options · TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html)

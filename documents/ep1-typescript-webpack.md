@@ -6,22 +6,38 @@
 
 > 在開始之前請先確定您已經安裝所有的[基本套件](https://github.com/cian6390/vue-spa#packages)  
 
-## 依賴套件
+## 依賴
 
-- ts-loader  
+### webpack
+
+目前最流行的前端資源處理、打包工具。
+
+### typescript
+
+typescript 型別檢查，使開發更有效率
+
+### [webpack#ts-loader](https://webpack.js.org/guides/typescript/)
+
+webpack 中處理 typescript 的 loader
+
+### 快速安裝
 
 ```shell
-npm install --save-dev ts-loader
+npm install --save-dev webpack webpack-cli typescript ts-loader
+touch ./tsconfig.js
+thouch ./webpack.config.js
 ```
 
-## 編輯 tsconfig.js
+## 設定
+
+### 編輯 tsconfig.js
 
 ```javascript
 // tsconfig.js
 {
   "compilerOptions": {
-    "module": "esnext",
-    "target": "es5"
+    "module": "esnext", // 專案使用 esnext 語法
+    "target": "es5" // 期望編譯至 es5 語法
   }
 }
 ```
@@ -30,7 +46,7 @@ npm install --save-dev ts-loader
 它告訴 typescript 我們所使用的 module 是最新的 js 語法 `esnext`  
 並且我們想把程式編譯成 `es5`。
 
-## 編輯 webpack.config.js
+### 編輯 webpack.config.js
 
 ```javascript
 // webpack.config.js
@@ -63,7 +79,7 @@ module.exports = {
 
 透過以上的設定，webpack 可以將 `./src/main.ts` 編譯並打包至 `./dist/bundle.js`
 
-## 編輯 src/main.ts
+### 編輯 src/main.ts
 ```typescript
 // src/main.ts
 
@@ -76,7 +92,7 @@ class Foo {
 (new Foo()).greeting()
 ```
 
-## 編輯 package.json
+### 編輯 package.json
 在 scripts 的欄位中加入以下內容
 ```
 "build": "webpack"
@@ -84,11 +100,8 @@ class Foo {
 
 現在執行 `npm run build` 確認 webpack 將 `./src/main.ts` 編譯成 `./dist/bundle.js`  
 
-### Next step
-現在我們可以編譯出瀏覽器看得懂的 js 文件了，但還沒有一個好的方式確認結果  
+## 下一步
+現在我們可以透過 webpack 編譯出瀏覽器看得懂的 js 文件了，但還沒有一個好的方式確認結果  
 下一個單元說明，如何使用 [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/webpack-dev-server.md) 來查看程式執行結果。
 
 傳送門 => [webpack-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep2-webpack-dev-server.md)
-
-#### 相關文件
-- [webpack - TypeScript](https://webpack.js.org/guides/typescript/)

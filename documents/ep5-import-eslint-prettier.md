@@ -1,28 +1,46 @@
 
 # ESLint, Prettier
 
-`eslint` 是程式語法檢查器, 而 `prettier`則是拿來修正程式格式。  
-透過這兩個工具再加上 `husky`, `lint-staged` 來自動化檢查，即可做到風格一致的需求。  
+## 依賴
 
-## ESLint
+### [ESLint](https://eslint.org/)
+程式語法檢查器
+
+### [Prettier](https://prettier.io/)
+修正程式格式
+
+### [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
+讓 eslint 也能檢查 typescript 文件的工具  
 
 > 為什麼要用 eslint 檢查 typescript，請看 [Using ESLint and Prettier in a TypeScript Project](https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb)
 
-### 依賴
+### [eslint-plugin-vue](https://eslint.vuejs.org/)
+讓 eslint 也能檢查 vue 文件的工具。
+
+### [husky](https://github.com/typicode/husky)
+Git hook 工具。
+
+### 快速安裝
 
 ```shell
-npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin husky
+# eslint and typescript
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+# eslint and prettier
+npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
+# eslint and vue
+npm install --save-dev eslint-plugin-vue
+# git hook
+npm install --save-dev husky
 touch ./eslintrc.js
 touch .eslintignore
+touch ./prettierrc.js
 ```
 
-這個步驟我們除了安裝依賴之外，也額外建立了以下幾個設定檔，  
-- `.eslintrc.js` eslint 的主要設定檔文件
-- `.eslintignore` 告訴 eslint 哪些目錄、檔案不要檢查的設定檔文件
+> 使用 `*.js`，的原因是因為 `js` 格式比 `json` 格式更靈活。  
 
-> 使用 `.eslintrc.js`，的原因是因為 `js` 格式比 `json` 格式更靈活。  
+## 設定
 
-### 設定
+### Typescript
 
 將以下內容複製到 `.eslintrc.js` 文件之中。  
 
@@ -46,9 +64,6 @@ module.exports = {
   }
 };
 ```
-### package.json
-
-#### 新增 lint 命令
 
 加入新命令 `"lint": "eslint \"src/**/*.ts\""` 到 package.json 的 scripts 之中，  
 現在 packages.json 的 scripts 裡頭應該要像這樣
@@ -65,9 +80,7 @@ module.exports = {
 現在我們的 eslint 已經知道該如何檢查 `.ts` 文件，  
 執行命令 `npm run lint` 來檢查並 src 目錄中的所有 ts 文件。
 
-#### 新增 pre-commit
-
-將以下內容加入 `package.json`，來啟用 `pre-commit`  
+接著將以下內容加入 `package.json`，來啟用 `pre-commit`  
 在這之後，我們所有的 `commit` 都會先觸發 `lint` 命令，確保所提交程式碼風格符合規範。  
 
 ```javascript
@@ -82,18 +95,7 @@ module.exports = {
 }
 ```
 
-## Prettier
-
-### 依賴
-
-- prettier
-- eslint-config-prettier
-- eslint-plugin-prettier
-
-```shell
-npm install --save-dev prettier eslint-config-prettier eslint-plugin-prettier
-touch ./prettierrc.js
-```
+### Prettier
 
 將以下設定複製並貼入 `prettierrc.js`  
 
@@ -157,20 +159,7 @@ module.exports = {
 
 先在我們可以使用 `npm run format` 來修正程式碼風格
 
-## Vue
-
-現在我們的 ESLint 跟 Prettier，僅針對 `.ts` 文件做檢查  
-接著我們來讓他一併檢查 `.vue` 文件。
-
-### 依賴
-
-- eslint-plugin-vue
-
-```shell
-npm install --save-dev eslint-plugin-vue
-```
-
-### 設定
+### Vue
 
 將 `'plugin:vue/recommended'` 加入 `.eslintrc.js` 的 `extends` 之中  
 以及調整 `parser` 屬性至 `parserOptions` 物件裡，請參考註解說明。  
@@ -232,13 +221,6 @@ module.exports = {
 
 ## 下一步
 
-現在我們可以寫 typescript、也可以使用命令檢查程式語法、格式  
-該是時候導入測試工具了
+測試。
 
 傳送門 => [import-test](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
-
-#### 參考資料
-- [ESLint](https://eslint.org/)
-- [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint)
-- [Prettier](https://prettier.io/)
-- [eslint-plugin-vue](https://eslint.vuejs.org/)

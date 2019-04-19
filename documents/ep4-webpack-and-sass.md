@@ -79,19 +79,31 @@ module.exports = {
 ```
 
 ## 依賴
-- sass-loader
-- node-sass
-- postcss
-- postcss-loader
-- autoprefixer
+### [browserlist](https://github.com/browserslist/browserslist)
+各種前端工具通用的瀏覽器支援設定
+
+### [postcss](https://github.com/postcss/postcss)
+用來將樣式轉為 js 的工具。
+
+### [postcss-loader](https://github.com/postcss/postcss-loader)
+讓 webpack 與 postcss 合作的工具
+
+### [autoprefixer](https://github.com/postcss/autoprefixer#options)
+透過這個插件，我們可以自動補齊瀏覽器的樣式前綴詞。
+
+### [node-sass](https://github.com/sass/node-sass)
+`sass/scss` 的 nodejs 版本
+
+### [sass-loader](https://github.com/webpack-contrib/sass-loader)
+讓 webpack 與 sass 合作的工具
+
+### 快速安裝
 
 ```shell
 npm install --save-dev node-sass postcss autoprefixer sass-loader postcss-loader
 touch ./.browserslistrc
 touch ./postcss.config.js
 ```
-
-這次我們除了安裝依賴套件之外，還新增了兩個設定檔 `.browserrc` 和 `postcss.config.js`  
 
 ## 設定
 
@@ -245,19 +257,10 @@ h4 {
 現在關閉並重新執行 `npm run serve` 命令  
 打開瀏覽器測試，確認原本 hover 效果的紅色，現在已經變為綠色  
 
-### 下一步
+## 下一步
 
 關於樣式的設定其實還有很多，我們會在之後的個別單元中做更深入的介紹  
 現在，我們專案中幾個最重要的基本功能已經可以運作，可是程式顯得有點凌亂  
 這時候是導入程式語法、風格檢查器的好時機。
 
 傳送門 => [import-eslint-prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
-
-#### Reference
-- [browserlist](https://github.com/browserslist/browserslist)
-- [autoprefixer](https://github.com/postcss/autoprefixer#options)
-- [node-sass](https://github.com/sass/node-sass)
-- [postcss](https://github.com/postcss/postcss)
-- [postcss-loader](https://github.com/postcss/postcss-loader)
-- [sass-loader](https://github.com/webpack-contrib/sass-loader)
-- [webpack#sass-loader](https://webpack.js.org/loaders/sass-loader/#root)

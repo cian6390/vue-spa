@@ -3,14 +3,6 @@
 
 ## 依賴
 
-### 快速安裝
-
-```shell
-npm install --sav-dev @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env @babel/preset-typescript
-npm install --save-dev jest babel-core @types/jest vue-jest babel-jest @vue/test-utils
-touch ./jest.config.js
-```
-
 ### [jest](https://jestjs.io/)
 主要由 facebook 團隊所維護的測試工具
 
@@ -50,6 +42,14 @@ babel 的核心套件，只要需要使用到 babel，就必須安裝
 
 #### @types/jest
 由於我們使用 ts 來寫測試，因此需要安裝來自於 [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) 的 jest 型別。  
+
+### 快速安裝
+
+```shell
+npm install --sav-dev @babel/core @babel/plugin-syntax-dynamic-import @babel/preset-env @babel/preset-typescript
+npm install --save-dev jest babel-core @types/jest vue-jest babel-jest @vue/test-utils
+touch ./jest.config.js
+```
 
 ## 設定
 
@@ -168,6 +168,5 @@ test('App should render  the msg prop', () => {
 
 ## 下一步
 
-#### 相關資料
-
-
+到目前為止，專案已經導入大部分的主要功能  
+但有些設定並不夠完善，下一步，在我們繼續往前之前，把專案稍作整理。
