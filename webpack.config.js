@@ -63,8 +63,12 @@ const plugins = [
       to: rootResolve('dist/index.html')
     },
     {
-      from: rootResolve('public/service-worker.js'),
-      to: rootResolve('dist/service-worker.js')
+      from: rootResolve('public/sw.js'),
+      to: rootResolve('dist/sw.js')
+    },
+    {
+      from: rootResolve('public/images'),
+      to: rootResolve('dist/images')
     }
   ])
 ]

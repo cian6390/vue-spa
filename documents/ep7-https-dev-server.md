@@ -57,3 +57,9 @@ const devServer = {
 ```
 
 現在執行 `npm run serve`，將會以 https 的方式執行
+
+## 下一步
+
+SPA 的基石 ServiceWorker
+
+傳送門 => [ServiceWorker](https://github.com/cian6390/vue-spa/blob/master/documents/ep8-serviceworker.md)

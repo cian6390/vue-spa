@@ -75,4 +75,5 @@ nvm install 10
 - [EP4. webpack 與 sass/scss](https://github.com/cian6390/vue-spa/blob/master/documents/ep4-webpack-and-sass.md)
 - [EP5. 導入 eslint 與 prettier](https://github.com/cian6390/vue-spa/blob/master/documents/ep5-import-eslint-prettier.md)
 - [EP6. 導入測試](https://github.com/cian6390/vue-spa/blob/master/documents/ep6-import-test.md)
-- [EP7-https-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep7-https-dev-server.md)
+- [EP7. https-dev-server](https://github.com/cian6390/vue-spa/blob/master/documents/ep7-https-dev-server.md)
+- [EP8. ServiceWorker](https://github.com/cian6390/vue-spa/blob/master/documents/ep8-serviceworker.md)

@@ -1,16 +1,17 @@
-if ('serviceWorker' in navigator) {
+const isProduction = process.env.NODE_ENV === 'production'
+const supportServiceWorker = 'serviceWorker' in navigator
+const sw = '/sw.js'
+if (isProduction && supportServiceWorker) {
   window.addEventListener('load', function() {
     navigator.serviceWorker
-      .register('/service-worker.js')
+      .register(sw)
       .then(function(registration) {
-        // Registration was successful
         console.log(
           'ServiceWorker registration successful with scope: ',
           registration.scope
         )
       })
       .catch(function(err) {
-        // registration failed :(
         console.log('ServiceWorker registration failed: ', err)
       })
   })
