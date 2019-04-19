@@ -190,7 +190,7 @@ h4 {
 
 ### 全域變數
 
-通常應用程式中會有一些全域變數，通常是一些網站的主色、次色、段落樣式之類的  
+通常應用程式中會有一些樣式的全域變數，通常是一些網站的主色、次色、段落樣式之類的  
 現在就來建立一個這樣子的變數文件 `src/_variables.scss`  
 
 ```shell
@@ -217,7 +217,9 @@ const styleRule = {
     'postcss-loader', {
       loader: 'sass-loader',
       options: {
-        data: `@import '@/_variables.scss`
+        // 想像 webpack 只是把這行寫在每個 scss 文件的頂端
+        // 當然也可以注入更多的檔案。
+        data: `@import '@/_variables.scss;`
       }
     }
   ]
