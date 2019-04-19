@@ -24,16 +24,15 @@ webpack 中處理 typescript 的 loader
 
 ```shell
 npm install --save-dev webpack webpack-cli typescript ts-loader
-touch ./tsconfig.js
-thouch ./webpack.config.js
+touch ./tsconfig.json
+touch ./webpack.config.js
 ```
 
 ## 設定
 
-### 編輯 tsconfig.js
+### 編輯 tsconfig.json
 
 ```javascript
-// tsconfig.js
 {
   "compilerOptions": {
     "module": "esnext", // 專案使用 esnext 語法
