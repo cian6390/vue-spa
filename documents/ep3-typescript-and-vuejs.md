@@ -241,7 +241,7 @@ new Vue({
 接著新增一個型別設定檔案給 typescript，讓 typescript 認得 `.vue` 文件
 
 ```shell
-touch types/vue-shims.d.ts
+mkdir types && touch types/vue-shims.d.ts
 ```
 
 將以下內容複製到 `types/vue-shims.d.ts`
@@ -251,6 +251,9 @@ declare module '*.vue' {
   export default Vue;
 }
 ```
+
+> 這個步驟會用到 vue 因此需要執行  
+> npm install --save vue
 
 現在，問題都解決了！關閉並再次執行 `npm run serve` 來使剛剛的設定生效。
 這時候訪問 **http://localhost:9000** 應該要能夠看到藍色的 *Hello Vuejs*
