@@ -1,24 +1,21 @@
 <script lang="ts">
+import Home from '@/views/pages/Home.vue'
 import { Vue, Component } from 'vue-property-decorator'
 
-@Component
-export default class App extends Vue {
-  msg: string = 'Hello Vuejs'
-}
+@Component({ components: { Home } })
+export default class App extends Vue {}
 </script>
 
 <template>
-  <div>
-    <h4 v-text="msg" />
-    <img width="150px" height="auto" src="/images/vue.png" />
+  <div id="app">
+    <home />
   </div>
 </template>
 
-<style lang="scss" scoped>
-h4 {
-  color: $primary;
-  &:hover {
-    color: $success;
-  }
+<style lang="scss">
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 </style>
